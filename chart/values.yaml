@@ -31,3 +31,7 @@ resources:
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
+
+metadata:
+  annotations: {}  # This will override any default annotations
+  labels: {}      # This will override any default labels
