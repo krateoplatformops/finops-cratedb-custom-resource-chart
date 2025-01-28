@@ -1,0 +1,18 @@
+apiVersion: cloud.crate.io/v1
+kind: CrateDB
+metadata:
+  name: {{ include "finops-cratedb-cluster-chart.fullname" . }}
+  labels:
+    {{- include "finops-cratedb-cluster-chart.labels" . | nindent 4 }}
+spec:
+  cluster:
+    imageRegistry: {{ .Values.image.repository }}
+    name: {{ .Values.nameOverride | default .Chart.AppVersion }}
+    version: {{ .Values.image.tag | default .Chart.AppVersion }}
+  nodes:
+    data:
+    - name: {{ .Values.nameOverride | default .Chart.AppVersion }}
+      replicas: {{ .Values.replicaCount }}
+      resources:
+        {{- toYaml .Values.resources | nindent 10 }}
+        heapRatio: {{ .Values.resources.heapRation }}
