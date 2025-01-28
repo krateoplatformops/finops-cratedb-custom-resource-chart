@@ -7,11 +7,11 @@ metadata:
 spec:
   cluster:
     imageRegistry: {{ .Values.image.repository }}
-    name: {{ .Values.nameOverride | default .Chart.AppVersion }}
+    name: {{ .Values.fullNameOverride | default (include "finops-cratedb-cluster-chart.fullname" .) }}
     version: {{ .Values.image.tag | default .Chart.AppVersion }}
   nodes:
     data:
-    - name: {{ .Values.nameOverride | default .Chart.AppVersion }}
+    - name: {{ .Values.fullNameOverride | default (include "finops-cratedb-cluster-chart.name" .) }}
       replicas: {{ .Values.replicaCount }}
       resources:
         {{- toYaml .Values.resources | nindent 10 }}
