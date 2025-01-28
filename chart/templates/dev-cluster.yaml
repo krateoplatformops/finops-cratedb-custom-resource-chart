@@ -15,4 +15,3 @@ spec:
       replicas: {{ .Values.replicaCount }}
       resources:
         {{- toYaml .Values.resources | nindent 10 }}
-        heapRatio: {{ .Values.resources.heapRation }}
