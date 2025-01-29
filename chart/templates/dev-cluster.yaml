@@ -4,7 +4,7 @@ metadata:
   name: {{ include "finops-cratedb-cluster-chart.fullname" . }}
 spec:
   cluster:
-    name: {{ finops-cratedb-cluster-chart.fullname }}
+    name: {{ include "finops-cratedb-cluster-chart.fullname" . }}
     imageRegistry: {{ .Values.image.repository }}
     version: {{ .Values.image.tag | default .Chart.AppVersion }}
   nodes:
