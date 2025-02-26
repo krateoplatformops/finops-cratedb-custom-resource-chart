@@ -15,7 +15,7 @@ image:
 nameOverride: ""
 fullnameOverride: ""
 
-nodeName: node
+nodeName: hot
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
