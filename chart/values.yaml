@@ -30,6 +30,9 @@ resources:
   requests:
     cpu: 0.2
     memory: 512Mi
+  limits:
+    cpu: 0.5
+    memory: 1024Mi
 
 metadata:
   annotations: {}  # This will override any default annotations
