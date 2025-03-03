@@ -28,7 +28,7 @@ resources:
     storageClass: standard
   heapRatio: 0.25
   requests:
-    cpu: 200m
+    cpu: 0.2
     memory: 512Mi
 
 metadata:
