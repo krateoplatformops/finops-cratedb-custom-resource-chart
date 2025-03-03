@@ -22,17 +22,14 @@ resources:
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 0.5
-  #   memory: 1Gi
   disk:
     count: 1
     size: 1000MiB
     storageClass: standard
   heapRatio: 0.25
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  requests:
+    cpu: 200m
+    memory: 512Mi
 
 metadata:
   annotations: {}  # This will override any default annotations
