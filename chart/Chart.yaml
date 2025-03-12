@@ -1,6 +1,6 @@
 apiVersion: v2
-name: finops-cratedb-custom-resource
-description: FinOps CrateDB Operator Custom Resource
+name: finops-cratedb
+description: FinOps CrateDB Instance
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
