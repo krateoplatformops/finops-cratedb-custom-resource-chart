@@ -1,4 +1,4 @@
-{{- if .Values.openshift.create }}
+{{- if .Values.openshift.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:

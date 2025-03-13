@@ -25,7 +25,7 @@ podSecurityContext: {}
   # fsGroup: 2000
 
 openshift:
-  create: false
+  enabled: false
 # Pre-install job configuration
   preInstallJob:
     # Image to use for running OpenShift CLI commands
