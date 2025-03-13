@@ -24,13 +24,14 @@ podLabels: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
-createSCC: true
+openshift:
+  create: false
 # Pre-install job configuration
-preInstallJob:
-  # Image to use for running OpenShift CLI commands
-  image: "quay.io/openshift/origin-cli:4.16"
-  # Additional parameters for the job
-  ttlSecondsAfterFinished: 300
+  preInstallJob:
+    # Image to use for running OpenShift CLI commands
+    image: "quay.io/openshift/origin-cli:4.16"
+    # Additional parameters for the job
+    ttlSecondsAfterFinished: 300
 
 serviceAccount:
   create: true
@@ -96,6 +97,8 @@ volumes:
 volumeMounts: 
 - mountPath: /data
   name: data
+- mountPath: /scripts
+  name: create-user
 
 volumeClaims:
 - metadata:
@@ -117,16 +120,4 @@ metadata:
   labels: {}      # This will override any default labels
 
 env: {}
-
-init:
-  image:
-    repository: ghcr.io/krateoplatformops/alpine
-    pullPolicy: IfNotPresent
-    tag: 3.21.2
-
-  volumeMounts:
-    - mountPath: /scripts
-      name: create-user
-  
-  env: {}
 

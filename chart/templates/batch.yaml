@@ -1,4 +1,4 @@
-{{- if .Values.createSCC }}
+{{- if .Values.openshift.create }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -13,7 +13,7 @@ spec:
       serviceAccountName: {{ include "finops-cratedb-cluster-chart.serviceAccountName" . }}
       containers:
       - name: oc-client
-        image: {{ .Values.preInstallJob.image }}
+        image: {{ .Values.openshift.preInstallJob.image }}
         command:
         - /bin/sh
         - -c
